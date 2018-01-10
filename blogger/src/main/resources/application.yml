@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: dev
+
+  rabbitmq:
+    addresses: localhost:5672
+    username: xuyangnian
+    password: 123456
+    publisher-confirms: true
+    virtual-host: /
+
+  mail:
+    host: smtp.126.com
+    username: nianyangxu@126.com
+    password: 082811789ABCabc
+    default-encoding: UTF-8
+    fromMail:
+      addr: nianyangxu@126.com
+
+  #热部署
+  #devtools:
+    #restart:
+      #enabled: true
+      #additional-paths: src/main/java
+
+server:
+  port: 8088
+
+logging:
+  level:
+    root: INFO
+    org:
+      hibernate:
+        sql: DEBUG
+    com:
+      fnd:
+        blogger: DEBUG
+    druid:
+      sql:
+        DataSource: DEBUG
+        Connection: DEBUG
+        Statement: DEBUG
+        ResultSet: DEBUG
+
+security:
+  basic:
+    path: /myshutdown,/swagger-ui.html  #需要鉴权的path，多个的话以逗号分隔，默认为[/**]
+  user:
+    name: admin #验证用户名
+    password: secret #验证密码

@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: dev
+
+server:
+  port: 8088
+
+security:
+  basic:
+    path: /myshutdown,/swagger-ui.html  #需要鉴权的path，多个的话以逗号分隔，默认为[/**]
+  user:
+    name: admin #验证用户名
+    password: secret #验证密码

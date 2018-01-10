@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: C##boot
+    password: SWvV/RFTGIG6i2TJiK7UQv235v0xijxLJ3W1U3q/hBj+csoFgTRf2OGF9PCEJOfvU2Qr3nfPuC59fW31Kf5VOA==
+    connectionProperties: config.decrypt=true;config.decrypt.key=${spring.datasource.decrypt.publickey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    decrypt:
+      publickey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIqP3T5LTsaWWykvbM7ZOHc/UT6h88OdHMLzV1JZ23Ym/x7EiHDqSDmsNO/9Ydc7oMIetbghGX0O6Vc/AqxxPY8CAwEAAQ==
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: config,log4j
+    useGlobalDataSourceStat: true
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 60000
+
+
