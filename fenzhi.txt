@@ -1,2 +1,6 @@
 public void getId(){
+
+}
+
+public void getId2(String id){
 }
